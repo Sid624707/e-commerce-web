@@ -1,7 +1,7 @@
 import './App.css';
 import NavBar from './components/NavBar';
 import Cart from './features/cart/Cart';
-import { Route,Routes } from 'react-router-dom';
+import { Navigate, Route,Routes } from 'react-router-dom';
 import DisplayBooks from './features/book/DisplayBooks';
 import SelectedBook from './features/bookDetail/SelectedBook';
 import MyOrders from './features/order/MyOrders';
@@ -13,6 +13,7 @@ function App() {
       <NavBar />
       <Routes>
         <Route path='/' element={<DisplayBooks />}/>
+        <Route path='/e-commerce-web' element={<Navigate replace to="/" />}/>
         <Route path='/:selectedBook/:id' element={<SelectedBook />}/>
         <Route path='/myOrders' element={<MyOrders />}/>
         <Route path='/cart' element={<Cart />}/>
